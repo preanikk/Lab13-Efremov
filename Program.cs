@@ -20,9 +20,55 @@
 // }
 
 
-void PrintStudentCard(string name, int age, string group)
+// void PrintStudentCard(string name, int age, string group)
+// {
+//     Console.WriteLine($"Студент: {name}, возраст: {age}, группа: {group}");
+// }
+// PrintStudentCard("Егор", 18, "ИСП67");
+// PrintStudentCard("Валерия", 17, "ЮСП52");
+
+
+// double CalculateScholarship(double baseAmount, double bonusPercent)
+// {
+//     return baseAmount + baseAmount * bonusPercent / 100;
+// }
+
+// double result = CalculateScholarship(2000, 15);
+// Console.WriteLine(result);
+
+// bool isEligibleForBonus(double averageGrade)
+// {
+//     if (averageGrade >= 4.5)
+//         return true;
+//     else
+//         return false;
+// }
+
+
+
+double calculateAverageGrade(int[] grades)
 {
-    Console.WriteLine($"Студент: {name}, возраст: {age}, группа: {group}");
+    int sum = 0;
+    foreach (int grade in grades)
+    {
+        sum += grade;
+    }
+    return (double)sum / grades.Length;
 }
-PrintStudentCard("Егор", 18, "ИСП67");
-PrintStudentCard("Валерия", 17, "ЮСП52");
+int CountFives(int[] grades)
+{
+    int fives = 0;
+    foreach (int grade in grades)
+    {
+        if (grade == 5)
+        {
+            fives += 1;
+        }
+    }
+    return fives;
+}
+int[] grades = { 4, 5, 3, 5, 4 };
+double average = calculateAverageGrade(grades);
+int count = CountFives(grades);
+Console.WriteLine(average);
+Console.WriteLine(count);
